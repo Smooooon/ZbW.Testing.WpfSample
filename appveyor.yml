@@ -17,7 +17,7 @@ dotnet_csproj:
 before_build:
 - cmd: nuget restore
 - cmd: dotnet tool install -g dotnet-sonarscanner
-- cmd: dotnet sonarscanner begin /o:"Smooooon_ZbW.Testing.WpfSample" /k:"smooooon" /v:%APPVEYOR_BUILD_VERSION% /d:sonar.branch.name=%APPVEYOR_REPO_BRANCH% /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="3c13f434d8f37a773f3e9847bc57139e1b637f63" /d:sonar.language="cs" /d:sonar.exclusions="**/bin/**/*,**/obj/**/*" /d:sonar.cs.opencover.reportsPaths="CoverageResults\coverage.opencover.xml"
+- cmd: dotnet sonarscanner begin /o:"smooooon" /k:"Smooooon_ZbW.Testing.WpfSample" /v:%APPVEYOR_BUILD_VERSION% /d:sonar.branch.name=%APPVEYOR_REPO_BRANCH% /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="3c13f434d8f37a773f3e9847bc57139e1b637f63" /d:sonar.language="cs" /d:sonar.exclusions="**/bin/**/*,**/obj/**/*" /d:sonar.cs.opencover.reportsPaths="CoverageResults\coverage.opencover.xml"
 build_script:
 - cmd: dotnet build ZbW.Testing.WpfSample.sln
 - cmd: dotnet test ZbW.Testing.WpfSample.Client.IntegrationTests\ZbW.Testing.WpfSample.Client.IntegrationTests.csproj /p:CollectCoverage=true /p:CoverletOutput="../CoverageResults/"
