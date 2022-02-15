@@ -24,7 +24,7 @@ build_script:
 - cmd: dotnet test ZbW.Testing.WpfSample.Client.UnitTests\ZbW.Testing.WpfSample.Client.UnitTests.csproj /p:CollectCoverage=true /p:CoverletOutput="../CoverageResults/" /p:MergeWith="../CoverageResults/coverage.json"
 - cmd: dotnet test ZbW.Testing.WpfSample.Libs.IpInfoInterface.IntegrationTests\ZbW.Testing.WpfSample.Libs.IpInfoInterface.IntegrationTests.csproj /p:CollectCoverage=true /p:CoverletOutput="../CoverageResults/" /p:MergeWith="../CoverageResults/coverage.json" /p:CoverletOutputFormat=opencover
 after_build:
-- cmd: dotnet sonarscanner end /d:sonar.login="<AUTH_TOKEN>"
+- cmd: dotnet sonarscanner end /d:sonar.login="3c13f434d8f37a773f3e9847bc57139e1b637f63"
 artifacts:
 - path: ZbW.Testing.WpfSample.Client\bin\$(configuration)\netcoreapp3.1
   name: ZbW.WpfSample
